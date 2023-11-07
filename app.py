@@ -164,7 +164,7 @@ def main():
                             bif_content += "doc{}.create_location={}\n".format(
                                 doc_count, str(create_location)
                             )
-                            bif_content += "doc1.append={}\n".format(str(append))
+                            bif_content += "doc{}.append={}\n".format(doc_count, str(append))
                 
                             bif_content += "doc{}.delete_images={}\n".format(
                                 doc_count, str(delete_images)
@@ -174,7 +174,7 @@ def main():
                                 bif_file.write(bif_content)
                 
                             logger.debug("BIF successfully created.")
-                            doc_count += 1
+                            # doc_count += 1
 
             else:
                 logger.debug(
@@ -217,7 +217,7 @@ def main():
                         bif_content += "doc{}.create_location={}\n".format(
                             doc_count, str(create_location)
                         )
-                        bif_content += "doc1.append={}\n".format(str(append))
+                        bif_content += "doc{}.append={}\n".format(doc_count, str(append))
 
                         with open(bif_file_path, "a" if append else "w") as bif_file:
                             bif_file.write(bif_content)
